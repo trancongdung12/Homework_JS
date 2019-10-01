@@ -603,13 +603,14 @@
 
     .pay-money {
         position: relative;
-
+        margin-top: 40px;
         width: 530px;
         height: 200px;
         top: 200px;
         left: 710px;
     }
     .plus-cart{
+
         color: #515151;
         font-size: 30px;
     }
@@ -752,14 +753,15 @@
         display: flex;
         text-align: left;
         width: 100%;
-        height: 100px;
-        border-bottom: 1px solid black;
+        height: 40px;
+    
     }
     .price-prodcut img{
         position: relative;
-        top: -10px;
+        top: 0px;
     }
     .price-prodcut b{
+        font-size: 15px;
         position: relative;
         top: 10px;
     }
@@ -768,6 +770,7 @@
         width: 100%;
         height: 40px;
         line-height: 40px;
+        border-top: 1px solid black;
         border-bottom: 1px solid black;
     }
     .sale{

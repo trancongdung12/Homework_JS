@@ -5,6 +5,7 @@
     <title>Mua hàng</title>
     <link rel="stylesheet" type="text/css" href="web-mid.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+    <script src="muahang.js"></script>
 </head>
 
 <body>
@@ -65,7 +66,7 @@
                 </div>
         </div>
         <div class="table-pay">
-            <table class="table-1" >
+            <table class="table-1" id="myTable">
                 <thead>
                     <tr>
                         <th > </th>
@@ -77,19 +78,41 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td ><img class="delete" src="https://cdn4.iconfinder.com/data/icons/basic-ui-colour/512/ui-02-512.png" height="16px" width="16px" alt="Huỷ sản phẩm"></td>
+                    <tr  >
+                        <td>
+                            <img  class="delete" src="https://cdn4.iconfinder.com/data/icons/basic-ui-colour/512/ui-02-512.png" height="16px" width="16px" alt="Huỷ sản phẩm"></td>
                         <td><img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/nho.png" height="30px" width="30px" alt=""></td>
                         <td>Nho mỹ</td>
-                        <td class="price-pay">120.000đ</td>
-                        <td><input class="sl-pay" type="number" name="" min ="1" max="100" value="1"></td>
-                        <td>120.000đ</td>
+                        <td class="price-pay">120000đ</td>
+                        <td><input class="sl-pay" onchange="sum1()" type="number" name="" min ="1" max="100" value="1" id="select"></td>
+                        <td ><span id="tt1">120000</span>đ</td>
+                
                     </tr>
+
+                    <tr>
+                        <td ><img class="delete" src="https://cdn4.iconfinder.com/data/icons/basic-ui-colour/512/ui-02-512.png" height="16px" width="16px" alt="Huỷ sản phẩm"></td>
+                        <td><img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/CC_Apple_withPLU-Stickers-300x300.png" height="30px" width="30px" alt=""></td>
+                        <td>Táo mỹ</td>
+                        <td class="price-pay">150000đ</td>
+                        <td><input class="sl-pay" onchange="sum2()" type="number" name="" min ="1" max="100" value="1" id ="select1"></td>
+                        <td ><span id="tt2">150000</span>đ</td>
+                    </tr>
+
+                    <tr >
+                        <td ><img class="delete" src="https://cdn4.iconfinder.com/data/icons/basic-ui-colour/512/ui-02-512.png" height="16px" width="16px" alt="Huỷ sản phẩm"></td>
+                        <td><img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/banana__bigImage-300x300.png" height="30px" width="30px" alt=""></td>
+                        <td>Chuối</td>
+                        <td class="price-pay">150000đ</td>
+                        <td><input class="sl-pay" onchange="sum3()" type="number" name="" min ="1" max="100" value="1" id="select3"></td>
+                        <td ><span id="tt3">150000</span>đ</td>
+                    </tr>
+
+
                     <tr>
                         <td  colspan="6"> 
                             <div class="code-pay">
                                 <input class="sl-pay" type="text" placeholder="Mã ưu đãi" name=""> <span ><b>Ưu đãi:<b></span> <button class="acept-code">Áp dụng</button> 
-                                <button class="update-cart">Cập nhật giỏ hàng</button>
+                                <button class="update-cart" onclick = "getTotal()">Cập nhật giỏ hàng</button>
                             </div>
                         
                         </td>
@@ -102,15 +125,15 @@
             <p class="plus-cart">Cộng giỏ hàng</p>
             <table class="table-2">
                 <tr>
-                    <td class="text-3">Tạm tính</td>
-                    <td>120.000đ</td>
+                    <td class="text-3" >Tạm tính</td>
+                    <td><span id="tamtinh">420000</span>đ</td>
                 </tr>
                 <tr>
-                    <td class="text-3">Tổng</td>
-                    <td class="text-3">120.000đ</td>
+                    <td class="text-3" >Tổng</td>
+                    <td class="text-3"><span id="tong">420000</span>đ</td>
                 </tr>
             </table>
-            <button class="btn-pay"><a href="datmua.html" title="">Tiến hành thanh toán</a></button>
+            <button class="btn-pay" onclick=""><a href="datmua.html" title="">Tiến hành thanh toán</a></button>
         </div>
        
 </body>

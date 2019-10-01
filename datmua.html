@@ -5,6 +5,8 @@
     <title>Đặt mua</title>
     <link rel="stylesheet" type="text/css" href="web-mid.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.2/css/all.css" integrity="sha384-/rXc/GQVaYpyDdyxK+ecHPVYJSN9bmVFBvjA/9eOB+pb3F2w2N6fc5qB9Ew5yIns" crossorigin="anonymous">
+  
+     <script src="muahang.js"></script>
 </head>
 
 <body>
@@ -52,7 +54,7 @@
         </div>
         <div class="name-product">
 
-              <p>Đặt mua: <span style="color: red">Nho mỹ</span></p>
+              <p>Đặt mua:</p>
           </div>
         <div class="head-info">
               <div class="number">
@@ -72,47 +74,56 @@
           
           <div class="info">
             
-            <input class="i-info" type="text" name="" placeholder="Họ và tên">
-            <input class="i-info" type="text" name="" placeholder="Điện thoại">
-            <input class="i-info" type="text" name="" placeholder="Email">
-            <input class="i-info" type="text" name="" placeholder="Địa chỉ">
-            <textarea name="" placeholder="Ghi chú"></textarea>
+            <input class="i-info" type="text" name="" placeholder="Họ và tên" id="name">
+            <input class="i-info" type="text" name="" placeholder="Điện thoại" id="phone">
+            <input class="i-info" type="text" name="" placeholder="Email" id="email">
+            <input class="i-info" type="text" name="" placeholder="Địa chỉ" id="address">
+            <textarea name="" placeholder="Ghi chú" id="note"></textarea>
               
           </div>
           <div class="form-pay">
              
-              <select >
-                  <option>Internet Banking/ATM nội địa (giảm 5%)</option>
-                  <option>Visa/MasterCard/JCB (giảm 5%)</option>
-                  <option>Chuyển khoản 100% (giảm 5%)</option>
-                  <option>Chuyển khoản trước 50%</option>
-                  <option>Trả tiền mặt tại văn phòng</option>
+              <select id="selectCard" onchange="card()">
+                  <option value="1">Internet Banking/ATM nội địa (giảm 5%)</option>
+                  <option value="2">Visa/MasterCard/JCB (giảm 10%)</option>
+                  <option value="3">Chuyển khoản 100% (giảm 15%)</option>
+                  <option value="4">Chuyển khoản trước 50%</option>
+                  <option value="5">Trả tiền mặt tại văn phòng</option>
               </select>
-              <p>Thanh toán online bằng Internet Banking hoặc thẻ ATM nội địa để được giảm giá ngay <b style="color: red">5%</b>, hỗ trợ tất cả ngân hàng, thanh toán an toàn qua cổng VTCPay.</p>
+              <p id="text_card">Thanh toán online bằng Internet Banking hoặc thẻ ATM nội địa để được giảm giá ngay <span style="color: red; font-weight: bold;">5%</span>, hỗ trợ tất cả ngân hàng, thanh toán an toàn qua cổng VTCPay.</p>
           </div>
-          <div class="review">
+          <div class="review" style="color: #555555">
               <div class="price-prodcut">
-                  <img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/nho.png" height="100px" width="80px" alt=""><b>Nho mỹ&emsp;&emsp;&emsp;&emsp;&emsp;150.000đ</b> 
+                  <img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/nho.png" height="40px" width="40px" alt=""><b>Nho mỹ&emsp;&emsp;&emsp;&emsp;&emsp;
+                    <span>120.000đ</span></b> 
+              </div>
+              <div class="price-prodcut">
+                  <img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/CC_Apple_withPLU-Stickers.png" height="40px" width="40px" alt=""><b>Táo Mỹ&emsp;&emsp;&emsp;&emsp;&emsp;150.000đ</b> 
+              </div>
+              <div class="price-prodcut">
+                  <img src="http://at01.chonweb.vn/wp-content/uploads/2019/07/banana__bigImage-300x300.png" height="40px" width="40px" alt=""><b>Chuối&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;150.000đ</b> 
               </div>
               <div class="mgg">
-                  <a class="nhap-mgg" href="" title="">Nhập mã giảm giá</a>
+                  <a class="nhap-mgg" href="" title="">Nhập mã giảm giá  » </a>
+                  <span id="Codegg"></span>
               </div>
               <div class="sale">
-                <p>
+                <p><b>
                     <br>
 
-                  Tạm tính&emsp;&emsp;&emsp;150.000đ<br>
-                  Giảm giá&emsp;&emsp;&emsp;<span style="color: red">-30.000đ</span>
-                </p>
+                  Tạm tính&emsp;&emsp;&emsp;<span id="tam">420000</span>đ<br>
+                  Giảm giá&emsp;&emsp;&emsp;<span  style="color: red">-<span id="sale">21000</span>đ</span>
+                </p></b>
               </div>
-              <div class="total-price">
-                  Tổng cộng&emsp;&emsp;&emsp;120.000đ
+              <div class="total-price" style="font-weight: bold;">
+
+                  Tổng cộng&emsp;&emsp;&emsp;<span id="total">399000</span>đ
               </div>
           </div>
           
       </div>
       <div class="order">
-              <button class="btn-order"><a href="" title="">Đặt hàng</a></button>
+              <button class="btn-order" onclick="order()"><a href="" title="">Đặt hàng</a></button>
           </div>
        
 </body>
